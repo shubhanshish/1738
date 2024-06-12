@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter to Name</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .answer {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Type a Letter</h1>
+        <p>Type "a" or "h" to get an answer.</p>
+        <input type="text" id="letterInput" maxlength="1">
+        <button onclick="showAnswer()">Submit</button>
+        <div id="answer" class="answer"></div>
+    </div>
+
+    <script>
+        function showAnswer() {
+            const input = document.getElementById('letterInput').value.toLowerCase();
+            let answer = '';
+            if (input === 'a') {
+                answer = 'anil';
+            } else if (input === 'h') {
+                answer = 'Hom';
+            } else {
+                answer = 'Please type "a" or "h".';
+            }
+            document.getElementById('answer').innerText = answer;
+        }
+    </script>
+</body>
+</html>
